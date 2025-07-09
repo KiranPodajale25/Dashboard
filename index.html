@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Distributor Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 240px;
+      background: #2c3e50;
+      color: white;
+      padding: 30px 20px;
+      box-shadow: 4px 0 10px rgba(0,0,0,0.2);
+    }
+
+    .sidebar h2 {
+      font-size: 22px;
+      margin-bottom: 30px;
+      text-align: center;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 10px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 15px;
+      margin: 10px 0;
+      text-decoration: none;
+      color: white;
+      background: #34495e;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #1abc9c;
+    }
+
+    /* Main Content */
+    .main {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    /* Filters */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filters button,
+    .filters select {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filters button:hover,
+    .filters select:hover {
+      background: #1abc9c;
+      color: white;
+    }
+
+    /* Table Card */
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background: #3498db;
+      color: white;
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        text-align: center;
+      }
+
+      .filters {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Distributor Panel</h2>
+    <a href="#">📊 Reports</a>
+    <a href="#">🏪 Retail Management</a>
+    <a href="#">📁 Analytics</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="title">Retail Reports</div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <button>Today</button>
+      <button>Yesterday</button>
+      <button>This Week</button>
+      <button>Last Week</button>
+      <button>This Month</button>
+      <button>Last Month</button>
+      <button>Custom Date</button>
+
+      <select>
+        <option>Select Retailer</option>
+        <option>Retail 1</option>
+        <option>Retail 2</option>
+        <option>Retail 3</option>
+      </select>
+    </div>
+
+    <!-- Report Table -->
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Sale</th>
+            <th>Profit</th>
+            <th>Revenue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>₹10,000</td>
+            <td>₹2,000</td>
+            <td>₹12,000</td>
+          </tr>
+          <tr>
+            <td>₹15,000</td>
+            <td>₹3,000</td>
+            <td>₹18,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
