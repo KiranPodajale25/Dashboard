@@ -11,7 +11,7 @@
 
     body {
       margin: 0;
-      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
       color: #333;
     }
 
@@ -31,8 +31,8 @@
 
     .sidebar h2 {
       font-size: 22px;
-      margin-bottom: 30px;
       text-align: center;
+      margin-bottom: 30px;
       border-bottom: 2px solid #fff;
       padding-bottom: 10px;
     }
@@ -52,20 +52,20 @@
       background: #1abc9c;
     }
 
-    /* Main Content */
+    /* Main */
     .main {
       flex: 1;
       padding: 40px;
+      overflow-y: auto;
     }
 
-    .title {
-      font-size: 28px;
+    .section-title {
+      font-size: 26px;
       font-weight: bold;
-      margin-bottom: 30px;
       color: #2c3e50;
+      margin-bottom: 20px;
     }
 
-    /* Filters */
     .filters {
       display: flex;
       flex-wrap: wrap;
@@ -90,12 +90,12 @@
       color: white;
     }
 
-    /* Table Card */
     .card {
       background: white;
       border-radius: 15px;
       padding: 20px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin-bottom: 40px;
     }
 
     table {
@@ -104,15 +104,20 @@
     }
 
     th, td {
-      padding: 15px;
+      padding: 14px;
       border-bottom: 1px solid #ccc;
       text-align: center;
     }
 
     th {
-      background: #3498db;
+      background: #2980b9;
       color: white;
       font-size: 16px;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #555;
     }
 
     @media screen and (max-width: 768px) {
@@ -138,57 +143,104 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <h2>Distributor Panel</h2>
-    <a href="#">📊 Reports</a>
-    <a href="#">🏪 Retail Management</a>
-    <a href="#">📁 Analytics</a>
+    <a href="#reports">📊 Reports</a>
+    <a href="#retail">🏪 Retail Management</a>
+    <a href="#analytics">📈 Analytics</a>
   </div>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <div class="main">
-    <div class="title">Retail Reports</div>
+    
+    <!-- Reports Section -->
+    <div id="reports">
+      <div class="section-title">Retail Reports</div>
 
-    <!-- Filters -->
-    <div class="filters">
-      <button>Today</button>
-      <button>Yesterday</button>
-      <button>This Week</button>
-      <button>Last Week</button>
-      <button>This Month</button>
-      <button>Last Month</button>
-      <button>Custom Date</button>
+      <div class="filters">
+        <button>Today</button>
+        <button>Yesterday</button>
+        <button>This Week</button>
+        <button>Last Week</button>
+        <button>This Month</button>
+        <button>Last Month</button>
+        <button>Custom Date</button>
+        <select>
+          <option>Select Retailer</option>
+          <option>Retail 1</option>
+          <option>Retail 2</option>
+          <option>Retail 3</option>
+        </select>
+      </div>
 
-      <select>
-        <option>Select Retailer</option>
-        <option>Retail 1</option>
-        <option>Retail 2</option>
-        <option>Retail 3</option>
-      </select>
+      <div class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>Sale</th>
+              <th>Profit</th>
+              <th>Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>₹12,000</td>
+              <td>₹2,000</td>
+              <td>₹14,000</td>
+            </tr>
+            <tr>
+              <td>₹18,000</td>
+              <td>₹3,000</td>
+              <td>₹21,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <!-- Report Table -->
-    <div class="card">
-      <table>
-        <thead>
-          <tr>
-            <th>Sale</th>
-            <th>Profit</th>
-            <th>Revenue</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>₹10,000</td>
-            <td>₹2,000</td>
-            <td>₹12,000</td>
-          </tr>
-          <tr>
-            <td>₹15,000</td>
-            <td>₹3,000</td>
-            <td>₹18,000</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Retail Management Section -->
+    <div id="retail">
+      <div class="section-title">Retail Management</div>
+      <div class="card">
+        <p>✅ View and manage your connected retailers here.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Retailer</th>
+              <th>Status</th>
+              <th>Region</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Retail 1</td>
+              <td>Active</td>
+              <td>Pune</td>
+              <td><button style="background:#3498db;color:white;padding:5px 10px;border:none;border-radius:5px;">View</button></td>
+            </tr>
+            <tr>
+              <td>Retail 2</td>
+              <td>Inactive</td>
+              <td>Mumbai</td>
+              <td><button style="background:#e67e22;color:white;padding:5px 10px;border:none;border-radius:5px;">Activate</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+
+    <!-- Analytics Section -->
+    <div id="analytics">
+      <div class="section-title">Analytics</div>
+      <div class="card">
+        <p>📊 Charts and performance trends will be shown here.</p>
+        <ul>
+          <li>Total Sales Growth</li>
+          <li>Monthly Retailer Activity</li>
+          <li>Profit Trends</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </div>
 
